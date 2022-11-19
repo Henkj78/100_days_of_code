@@ -21,9 +21,9 @@ print(display)
 
 chosen_letter = input("\nGuess a letter: ").lower()
 
-for letter in chosen_letter:
-    if letter in chosen_word:
-        index_positions = chosen_word.index(letter)
-        display[index_positions] = letter
+for i in range(len(chosen_word)):
+    letter = chosen_word[i]
+    if letter == chosen_letter:
+        display[i] = chosen_letter
 
 print(display)
