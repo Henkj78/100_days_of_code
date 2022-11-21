@@ -19,11 +19,18 @@ for letter in chosen_word:
 
 print(display)
 
-chosen_letter = input("\nGuess a letter: ").lower()
+end_of_game = False
 
-for i in range(len(chosen_word)):
-    letter = chosen_word[i]
-    if letter == chosen_letter:
-        display[i] = chosen_letter
+while not end_of_game:
+    chosen_letter = input("\nGuess a letter: ").lower()
 
-print(display)
+    for i in range(len(chosen_word)):
+        letter = chosen_word[i]
+        if letter == chosen_letter:
+            display[i] = chosen_letter
+
+    print(display)
+
+    if "_" not in display:
+        end_of_game = True
+        print("You win.")
